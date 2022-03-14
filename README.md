@@ -13,6 +13,6 @@ Apply Gabor transform to ADC echo signal to generate image dataset ( low img_siz
 
 Only create 700 images per class to avoid imbalance data
 
-1000 images to train + 400 images to validate, confusion matrix can be seen as following:
+1200 images to train + 200 images to validate, confusion matrix can be seen as following:
 
 ![alt text](https://github.com/long2811/sensor_project/blob/main/result/confusionmatrixhighresolution.PNG)
