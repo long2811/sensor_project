@@ -9,4 +9,4 @@ Threshold : - t 170 1000: 2100 Measurements
 - Human close (HC): 400
 - Human still close (SHC): 400
 
-Apply Gabor transform to ADC echo signal to generate image dataset (img_size = [183x230x1]), then using CNN to learn and predict the result
+Apply Gabor transform to ADC echo signal to generate image dataset (img_size = [183x230x1]), then using CNN to learn and predict the results
