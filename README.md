@@ -15,4 +15,4 @@ Only create 700 images per class to avoid imbalance data
 
 1000 images to train + 400 images to validate, confusion matrix can be seen as following:
 
-![alt text](https://github.com/long2811/sensor_project/blob/main/result/confusionmatrix.png)
+![alt text](https://github.com/long2811/sensor_project/blob/main/result/confusionmatrixhighresolution.PNG)
