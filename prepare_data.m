@@ -2,7 +2,7 @@
 close all; clc; clear
 code_name = "SHC";
 attempt = "2";
-A = readmatrix("newdata/adc_"+code_name+attempt+".txt");
+A = readmatrix("new_data/adc_"+code_name+attempt+".txt");
 %Remove unnecessary columns
 B = A(:,17:length(A));
 
@@ -50,10 +50,12 @@ end
     set(gca,'Ylim',[40 70])
     colormap gray
     set(gca, 'Visible', 'off');    
-    exportgraphics(gca,"newtraining/"+code_name+"_"+attempt+"_"+index+".png"...
-                   ,'Resolution',50);
+    exportgraphics(gca,"new_training/"+code_name+"_"+attempt+"_"+index+".png"...
+                   ,'Resolution',100);
     close
-    image = imread("newtraining/"+code_name+"_"+attempt+"_"+index+".png");
+    image = imread("new_training/"+code_name+"_"+attempt+"_"+index+".png");
     new_image = rgb2gray(image);
-    imwrite(new_image,"newtraining/"+code_name+"_"+attempt+"_"+index+".png");
+    imwrite(new_image,"new_training/"+code_name+"_"+attempt+"_"+index+".png");
  end
+close all
+beep

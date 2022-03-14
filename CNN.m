@@ -1,9 +1,7 @@
-close all 
-clear 
-clc
+close all; clear; clc
 %% Specify the dataset directory
 currentFolder = pwd;
-imds = imageDatastore(fullfile(currentFolder, 'newtraining'), ...
+imds = imageDatastore(fullfile(currentFolder, 'new_training'), ...
     'IncludeSubfolders',true,'LabelSource','foldernames');
 %% Getting number of labels
 labelCount = countEachLabel(imds);
@@ -11,10 +9,11 @@ labelCount = countEachLabel(imds);
 img = readimage(imds,1);
 imageSize = size(img);
 %% Specify the number of files used for training
-filesToTrain = 500;
+filesToTrain = 600;
 [imdsTrain,imdsValidation] = splitEachLabel(imds,filesToTrain,'randomize');
 
-imdsTrain=augmentedImageDatastore(imageSize, imdsTrain);
+%imdsTrain=augmentedImageDatastore(imageSize, imdsTrain);
+
 %% Declare the CNN network 
 layers = [
     imageInputLayer(size(img))
@@ -41,7 +40,7 @@ layers = [
 %% Specify Training Options for the model
 options = trainingOptions('sgdm', ...
     'InitialLearnRate',0.01, ...
-    'MaxEpochs',5, ...
+    'MaxEpochs',10, ...
     'Shuffle','every-epoch', ...
     'ValidationData',imdsValidation, ...
     'ValidationFrequency',30, ...
@@ -100,4 +99,5 @@ plotconfusion(YPred,YValidation)
 % F1 score: harmonic mean of precision and sensitivity = 2TP/(2TP+FP+FN)
 % ROC curve 
 %% Save the Network for future validation
-save net;
+CNNnet = net;
+save CNNnet;
