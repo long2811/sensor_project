@@ -42,3 +42,4 @@ Note: Please do not click or hover your mouse on the Gabor plot, otherwise it wi
 10. Finally, click on "Load CNN & predict" button, the prediction will be indicated by a red lamp\
 Note: Ensure CNNnet.mat is located in the SAME directory as sensor_project_GUI.mlapp\
 Note: Run the application at first time will cost extra time to fully load the network
+![alt text](https://github.com/long2811/sensor_project/blob/main/result/sensor_project_app.PNG)
